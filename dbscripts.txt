@@ -1,0 +1,24 @@
+CREATE TABLE employee (
+    employee_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    employeename VARCHAR(255) NOT NULL UNIQUE,
+    department VARCHAR(255),
+    email_id VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    joiningdate DATE NOT NULL,
+    date_of_birth DATE,
+    is_Active CHAR(1)
+);
+
+
+INSERT INTO employee (employeename, department, email_id, password, joiningdate, date_of_birth, is_Active)
+VALUES
+('John Doe', 'HR', 'john.doe@example.com', 'password1', DATE('2023-01-15'), DATE('1990-05-10'), 'Y'),
+('Jane Smith', 'Marketing', 'jane.smith@example.com', 'password2', DATE('2023-02-20'), DATE('1988-09-20'), 'Y'),
+('Michael Johnson', 'Finance', 'michael.johnson@example.com', 'password3', DATE('2023-03-25'), DATE('1995-12-05'), 'Y'),
+('Emily Davis', 'IT', 'emily.davis@example.com', 'password4', DATE('2023-04-30'), DATE('1992-07-15'), 'Y'),
+('Chris Wilson', 'Sales', 'chris.wilson@example.com', 'password5', DATE('2023-05-05'), DATE('1987-03-28'), 'Y'),
+('Madison Simmons', 'HR', 'madison.simmons@example.com', 'password36', DATE('2025-12-20'), DATE('1995-06-15'), 'Y'),
+('Ethan Price', 'IT', 'ethan.price@example.com', 'password37', DATE('2026-01-25'), DATE('1991-12-20'), 'Y'),
+('Chloe Howard', 'Marketing', 'chloe.howard@example.com', 'password38', DATE('2026-02-28'), DATE('1987-07-05'), 'Y'),
+('Nathan Ward', 'Finance', 'nathan.ward@example.com', 'password39', DATE('2026-03-05'), DATE('1993-01-25'), 'Y');
+
