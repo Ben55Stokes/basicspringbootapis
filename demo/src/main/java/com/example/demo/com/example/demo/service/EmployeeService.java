@@ -8,15 +8,15 @@ import com.example.demo.com.example.demo.requestBody.SaveEmployeeRequestBody;
 import com.example.demo.com.example.demo.result.Result;
 
 public interface EmployeeService {
-	public Result getAllEmployees() throws CustomException;
+	public Result getAllEmployees() ;
 
-	public Result getEmployeeByName(String employeeName) throws CustomException;
+	public Result getEmployeeByName(String employeeName)   ;
 
-	public Result getEmployeeByEmailID(String emailID) throws CustomException;
+	public Result getEmployeeByEmailID(String emailID)   ;
 	
-	public Result saveEmployee(List<SaveEmployeeRequestBody> employeeRequestBody) throws Exception;
+	public Result saveEmployee(List<SaveEmployeeRequestBody> employeeRequestBody)   ;
 	
-	public Result getEmployeeByDeptarment() throws Exception;
+	public Result getEmployeeByDeptarment()   ;
 
-	public Result inactivateActivateEmployee(ActiveInactiveRequestBody activeInactiveRequestBody) throws Exception;
+	public Result inactivateActivateEmployee(ActiveInactiveRequestBody activeInactiveRequestBody)   ;
 }

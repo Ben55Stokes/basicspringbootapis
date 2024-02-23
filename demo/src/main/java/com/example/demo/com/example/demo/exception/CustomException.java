@@ -1,11 +1,14 @@
 package com.example.demo.com.example.demo.exception;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CustomException extends Exception{
+@Component
+public class CustomException extends RuntimeException{
 
 	/**
 	 * for version and compatibility while serializing and deserializing

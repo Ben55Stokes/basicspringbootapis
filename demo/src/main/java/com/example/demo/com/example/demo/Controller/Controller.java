@@ -24,32 +24,32 @@ public class Controller {
 	EmployeeServiceClass service;
 	
 	@GetMapping("/get-all-employees")
-	public Result getAllEmployees() throws CustomException {
+	public Result getAllEmployees()    {
 		return service.getAllEmployees();
 	}
 
 	@GetMapping("/get-by-employeename")
-	public Result getEmployeeByName(@RequestParam("employeeName") String employeeName) throws CustomException {
+	public Result getEmployeeByName(@RequestParam("employeeName") String employeeName)    {
 		return service.getEmployeeByName(employeeName);
 	}
 	
 	@GetMapping("/employee-email-id-exists/{emailID}")
-	public Result getEmployeeemailIdExists(@PathVariable("emailID") String emailID) throws CustomException {
+	public Result getEmployeeemailIdExists(@PathVariable("emailID") String emailID)    {
 		return service.getEmployeeByEmailID(emailID);
 	}
 	
 	@PostMapping("/save-employee")
-	public Result saveEmployee(@RequestBody List<SaveEmployeeRequestBody> employeeRequestBody) throws Exception {
+	public Result saveEmployee(@RequestBody List<SaveEmployeeRequestBody> employeeRequestBody)    {
 		return service.saveEmployee(employeeRequestBody);
 	}
 	
 	@GetMapping("/get-all-employees-by-department")
-	public Result getEmployeesByDepartMents() throws Exception {
+	public Result getEmployeesByDepartMents()    {
 		return service.getEmployeeByDeptarment();
 	}
 
 	@PutMapping("/inactivate-activate-employee")
-	public Result inactivateActivateEmployee(@RequestBody ActiveInactiveRequestBody activeInactiveRequestBody) throws Exception{
+	public Result inactivateActivateEmployee(@RequestBody ActiveInactiveRequestBody activeInactiveRequestBody)   {
 		return service.inactivateActivateEmployee(activeInactiveRequestBody);
 	}
 }

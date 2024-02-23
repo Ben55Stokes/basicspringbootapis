@@ -28,7 +28,7 @@ public class EmployeeServiceClass implements EmployeeService {
 	EmployeeRepository employeeRepository;
 	
 	@Override
-	public Result getAllEmployees() throws CustomException {
+	public Result getAllEmployees(){
 		Optional<List<EmployeeEntity>> entities = null;
 		Result result = null;
 		try {
@@ -43,7 +43,7 @@ public class EmployeeServiceClass implements EmployeeService {
 		return result;
 	}
 
-	public Result getEmployeeByName(String employeeName) throws CustomException {
+	public Result getEmployeeByName(String employeeName) {
 		Optional<EmployeeEntity> employeeEntity = null;
 		Result result = null;
 		try {
@@ -58,7 +58,7 @@ public class EmployeeServiceClass implements EmployeeService {
 		return result;
 	}
 
-	public Result getEmployeeByEmailID(String emailID) throws CustomException {
+	public Result getEmployeeByEmailID(String emailID){
 
 		Optional<EmployeeEntity> employeeEntity = null;
 		Result result = null;
@@ -76,7 +76,7 @@ public class EmployeeServiceClass implements EmployeeService {
 	/*
 	 *  checks whether any emailId exists or not if exists it won't add
 	 */
-	public Result saveEmployee(List<SaveEmployeeRequestBody> employeeRequestBody) throws Exception {
+	public Result saveEmployee(List<SaveEmployeeRequestBody> employeeRequestBody) {
 		List<EmployeeEntity> employeeEntities = new ArrayList<>();
 		List<EmployeeEntity> employeeEntitiesRtrn = new ArrayList<>();
 		Result result= new Result();
@@ -104,7 +104,7 @@ public class EmployeeServiceClass implements EmployeeService {
 	}
 
 	@Override
-	public Result getEmployeeByDeptarment() throws Exception {
+	public Result getEmployeeByDeptarment() {
 		Map<String, List<EmployeeEntity>> map= new HashMap<>();
 		try {
 			Optional<List<EmployeeEntity>> employeeEntities= employeeRepository.findAllEmployees();
@@ -117,7 +117,7 @@ public class EmployeeServiceClass implements EmployeeService {
 	}
 
 	@Transactional
-	public Result inactivateActivateEmployee(ActiveInactiveRequestBody activeInactiveRequestBody) throws Exception{
+	public Result inactivateActivateEmployee(ActiveInactiveRequestBody activeInactiveRequestBody){
 		try {
 			employeeRepository.deactivateEmployee(activeInactiveRequestBody.getEmployeeId(),
 					activeInactiveRequestBody.getIsActive());
